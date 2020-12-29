@@ -2,7 +2,18 @@
 
 import React, { Component } from "react";
 import { StyleSheet } from "react-native";
-import { ViroARScene, ViroConstants, ViroText } from "react-viro";
+import {
+  Viro3DObject,
+  ViroAmbientLight,
+  ViroAnimations,
+  ViroARScene,
+  ViroBox,
+  ViroConstants,
+  ViroMaterials,
+  ViroNode,
+  ViroSpotLight,
+  ViroText,
+} from "react-viro";
 
 export default class HelloWorldSceneAR extends Component {
   constructor() {
@@ -26,12 +37,34 @@ export default class HelloWorldSceneAR extends Component {
           position={[0, 0, -1]}
           style={styles.helloWorldTextStyle}
         />
-        <ViroText
-          text={this.state.text}
-          scale={[0.5, 0.5, 0.5]}
-          position={[0, 0, 1]}
-          style={styles.helloWorldTextStyle}
+        <ViroBox
+          position={[0, -0.5, -1]}
+          scale={[0.3, 0.3, 0.1]}
+          materials={["grid"]}
+          animation={{ name: "rotate", run: true, loop: true }}
         />
+        <ViroAmbientLight color={"#aaaaaa"} />
+        <ViroSpotLight
+          innerAngle={5}
+          outerAngle={90}
+          direction={[0, -1, -0.2]}
+          position={[0, 3, 1]}
+          color="#ffffff"
+          castsShadow={true}
+        />
+        <ViroNode position={[0, -1, 0]} dragType="FixedToWorld" onDrag={() => {}}>
+          <Viro3DObject
+            source={require("../assets/images/emoji_smile/emoji_smile.vrx")}
+            resources={[
+              require("../assets/images/emoji_smile/emoji_smile_diffuse.png"),
+              require("../assets/images/emoji_smile/emoji_smile_normal.png"),
+              require("../assets/images/emoji_smile/emoji_smile_specular.png"),
+            ]}
+            position={[0, 0.5, 0]}
+            scale={[0.2, 0.2, 0.2]}
+            type="VRX"
+          />
+        </ViroNode>
       </ViroARScene>
     );
   }
@@ -54,6 +87,21 @@ var styles = StyleSheet.create({
     color: "#ffffff",
     textAlignVertical: "center",
     textAlign: "center",
+  },
+});
+
+ViroMaterials.createMaterials({
+  grid: {
+    diffuseTexture: require("../assets/images/grid_bg.jpg"),
+  },
+});
+
+ViroAnimations.registerAnimations({
+  rotate: {
+    properties: {
+      rotateY: "+=90",
+    },
+    duration: 250, //.25 seconds
   },
 });
 
