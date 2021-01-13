@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, TouchableHighlight, View } from "react-native";
-import MapView from "react-native-maps";
 import { ViroARSceneNavigator, ViroVRSceneNavigator } from "react-viro";
 
+import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
 // Sets the default scene you want for AR and VR
 const InitialARScene = require("./src/scenes/ARPosterScene");
 const InitialVRScene = require("./src/scenes/HelloWorldScene");
@@ -36,7 +36,7 @@ const ViroApp = () => {
   ) : navigatorType === "MAP" ? (
     <View style={styles.container}>
       <MapView
-        // provider={PROVIDER_GOOGLE} // remove if not using Google Maps
+        provider={PROVIDER_GOOGLE} // remove if not using Google Maps
         style={styles.map}
         region={{
           latitude: 37.78825,
