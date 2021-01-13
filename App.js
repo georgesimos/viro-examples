@@ -20,11 +20,11 @@ const ViroApp = () => {
       <View style={styles.inner}>
         <Text style={styles.titleText}>Choose your desired experience:</Text>
 
-        <TouchableHighlight style={styles.buttons} onPress={selectExperience("AR")} underlayColor={"#68a0ff"}>
+        <TouchableHighlight style={styles.buttons} onPress={() => selectExperience("AR")} underlayColor={"#68a0ff"}>
           <Text style={styles.buttonText}>AR</Text>
         </TouchableHighlight>
 
-        <TouchableHighlight style={styles.buttons} onPress={selectExperience("VR")} underlayColor={"#68a0ff"}>
+        <TouchableHighlight style={styles.buttons} onPress={() => selectExperience("VR")} underlayColor={"#68a0ff"}>
           <Text style={styles.buttonText}>VR</Text>
         </TouchableHighlight>
       </View>
