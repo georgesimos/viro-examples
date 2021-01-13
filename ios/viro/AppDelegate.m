@@ -12,11 +12,13 @@
 #import <ViroReact/VRTBundleURLProvider.h>
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
+#import <GoogleMaps/GoogleMaps.h>
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+  [GMSServices provideAPIKey:@"AIzaSyA2tIlfqDaReiEVxnXnFiC1S5dQOmhY4I8"];
   BOOL enterVrImmediately = YES;
   BOOL usingNgrok = YES;
 

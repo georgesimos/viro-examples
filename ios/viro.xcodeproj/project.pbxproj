@@ -660,6 +660,7 @@
 				10279E844049D618D9670068 /* [CP] Embed Pods Frameworks */,
 				EBC53F9E9DF7C541D8EF873D /* Execute Ngrok */,
 				D59ABF5FB9AC68FADCFE507E /* Copy ngrok endpoint */,
+				8380BF234C7B154D53DA8633 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1147,6 +1148,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+		};
+		8380BF234C7B154D53DA8633 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-viro/Pods-viro-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-viro/Pods-viro-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		D59ABF5FB9AC68FADCFE507E /* Copy ngrok endpoint */ = {
 			isa = PBXShellScriptBuildPhase;
