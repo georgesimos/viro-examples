@@ -1,6 +1,5 @@
 platform :ios, '9.3'
 target 'viro' do
-  use_frameworks!
   pod 'ViroReact', :path => '../node_modules/react-viro/ios/'
-  pod 'ViroKit', :path => '../node_modules/react-viro/ios/dist/ViroRenderer/'
+  pod 'ViroKit_static_lib', :path => '../node_modules/react-viro/ios/dist/ViroRenderer/static_lib'
 end
