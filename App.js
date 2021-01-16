@@ -3,6 +3,7 @@ import { StyleSheet, Text, TouchableHighlight, View } from "react-native";
 import { ViroARSceneNavigator, ViroVRSceneNavigator } from "react-viro";
 
 import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
+import ARDrivingCar from "./src/components/ARDrivingCar";
 // Sets the default scene you want for AR and VR
 const InitialARScene = require("./src/scenes/ARPosterScene");
 const InitialVRScene = require("./src/scenes/HelloWorldScene");
@@ -54,8 +55,7 @@ const ViroApp = () => {
 const styles = StyleSheet.create({
   container: {
     ...StyleSheet.absoluteFillObject,
-    height: 400,
-    width: 400,
+    flex: 1,
     justifyContent: "flex-end",
     alignItems: "center",
   },
@@ -116,5 +116,5 @@ const styles = StyleSheet.create({
   },
 });
 
-// ViroApp = require("./src/components/ARDrivingCar");
+// export default ARDrivingCar;
 export default ViroApp;
